@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>IMG_PICKER</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="stylesheet" href="./css/common.css">
+<script type="text/javascript" src="./js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="./js/yougmi_imgPicker.js"></script>
+</head>
+<body>
+
+<!-- wrapper -->
+<!-- <div id="wrapper"> -->
+	<!-- Container -->
+	<!-- <div id="container"> -->
+		<!-- <div id="content"> -->
+			<div id="picker-area">
+			</div>
+			<button type="button" id="btn">선택 이미지 경로</button>
+		<!-- </div> -->
+		<!-- // #content -->
+	<!-- </div> -->
+	<!-- // #Container -->
+<!-- </div> -->
+<script>
+
+	var picker = new yougmi_imgPicker({
+		elId : "#picker-area",
+		imgList : ["./images/pic_01.jpg","./images/pic_02.jpg","./images/pic_03.jpg","./images/pic_04.jpg"],
+		selected : true,
+		colCount : 3,
+		insertAble : true
+	});
+
+	$("#btn").click(function(){
+		picker.getSelected(); // 선택 이미지 경로 리턴 함수
+	})
+
+
+
+
+
+	$(function() {
+            $("#imgInp").on('change', function(){
+                readURL(this);
+            });
+        });
+
+
+</script>
+<!-- // #wrapper -->
+
+</body>
+</html>
